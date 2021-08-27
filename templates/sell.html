@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="\sell" method="post">
+    <select name="symbol" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" >
+     <option selected disabled value="">Stock</option>
+
+    {% for data in database %}
+    <option value = "{{data.symbol}}">{{data.symbol}}</option>
+    {% endfor %}
+    
+    </select>
+    
+    
+      
+    <div class="form-group">
+            <input class="form-control" name="shares" placeholder="NO of shares" type="number">
+        </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<div class="section">
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Value</th>
+            </tr>
+            <tbody>
+                {% for data in database%}
+                <tr>
+                    <td>{{data.symbol}}</td>
+                    <td>{{data.share}}</td>
+                    <td>{{data.price}}</td>
+                    <td>{{data.value}}</td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </thead>
+
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th> Cash</th>
+                <th>Stock Value</th>
+            </tr>
+            <tbody>
+
+                <tr>
+                    <td>{{cashdata}}</td>
+                    <td>{{stockvalue}}</td>
+                </tr>
+
+
+            </tbody>
+        </thead>
+    </table>
+    </div>
+{% endblock %}
